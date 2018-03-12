@@ -58,18 +58,18 @@ The following line of code retrieves a driver to automate the browser.
 
 ```java
 // Get driver initialized by TestProject Agent
-IOSDriver<IOSElement> driver = this.getIOSDriver(IOSElement.class);
+AndroidDriver<AndroidElement> driver = this.getAndroidDriver(AndroidElement.class);
 ```
 
 The following code locates the *firstName* and *lastName* elements and uses the *sendKeys(keys)* method to simulate text typing in the element.
 
 ```java
 // Find First name element and type 'John'
-IOSElement firstName = driver.findElement(By.id("firstName"));
+AndroidElement firstName = driver.findElement(By.id("firstName"));
 firstName.sendKeys("John");
 
 // Find Last name element and type 'Smith'
-IOSElement lastName = driver.findElement(By.id("lastName"));
+AndroidElement lastName = driver.findElement(By.id("lastName"));
 lastName.sendKeys("Smith");
 ```
 
@@ -77,7 +77,7 @@ The following code locates the *fullName* element, retrieves its text and valida
 
 ```java
 // Find Full Name element
-IOSElement fullName = driver.findElement(By.id("fullName"));
+AndroidElement fullName = driver.findElement(By.id("fullName"));
 
 // Verify that Full Name equals a concatenation of First and Last
 String fullNameText = fullName.getText();
@@ -145,7 +145,7 @@ To start developing an Addon a manifest file is required. The manifest is a desc
 
 ### Implement the Addon
 
-Lets create our first Addon. It will have an Action **FullNameBuilderAction** that fills in first and last names in [TestProject's Demo](https://github.com/testproject-io/ios-demo-app) App for iOS.
+Lets create our first Addon. It will have an Action **FullNameBuilderAction** that fills in first and last names in [TestProject's Demo](https://github.com/testproject-io/android-demo-app) App for Android.
 
 Example full source code is available here: [FullNameBuilderAddon](addons/FullNameBuilderAddon).
 
@@ -193,7 +193,7 @@ The following line of code retrieves the driver.
 
 ```java
 // Get driver initialized by TestProject Agent
-IOSDriver<IOSElement> driver = this.getIOSDriver(IOSElement.class);
+AndroidDriver<AndroidElement> driver = this.getAndroidDriver(AndroidElement.class);
 ```
 
 Following code locates the relevant input fields, enters the data:
@@ -269,7 +269,7 @@ Actions can be element based, when their scope is limited to operations on a spe
 
 ```java
 // Get element provided to action
-IOSElement element = this.getElement(IOSElement.class);
+AndroidElement element = this.getElement(AndroidElement.class);
 ```
 
 Code above receives an element that was provided to the Action.
