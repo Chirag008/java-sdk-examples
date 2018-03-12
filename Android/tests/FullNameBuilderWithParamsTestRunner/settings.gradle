@@ -1,0 +1,5 @@
+rootProject.name = 'FullNameBuilderWithParamsTestRunner'
+
+include ":FullNameBuilderWithParamsTest"
+project(":FullNameBuilderWithParamsTest").projectDir = file("../FullNameBuilderWithParamsTest")
+

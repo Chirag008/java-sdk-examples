@@ -1,0 +1,27 @@
+group 'io.testproject'
+version '1.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+// Configurations
+configurations {
+    tpsdk
+    compile.extendsFrom tpsdk
+}
+
+dependencies {
+    // Update the location of the sdk as required
+    tpsdk files('io.testproject.sdk.java.jar')
+    compile project(":FullNameBuilderWithParamsTest")
+}
+
+task('run', dependsOn: 'classes', type: JavaExec) {
+    main = 'io.testproject.examples.sdk.java.FullNameBuilderWithParamsTestRunner'
+    classpath = sourceSets.main.runtimeClasspath
+}

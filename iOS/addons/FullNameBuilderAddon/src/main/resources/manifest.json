@@ -1,0 +1,5 @@
+{
+    "guid": "{YOUR_ADDON_GUID}",
+    "version": "0.1",
+    "permissions": []
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'FullNameBuilderAddonRunner'
+
+include ":FullNameBuilderAddon"
+project(":FullNameBuilderAddon").projectDir = file("../FullNameBuilderAddon")
+
