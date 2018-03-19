@@ -61,7 +61,7 @@ public class FullNameBuilderAddonRunner {
         action.setLastName("Presley");
 
         // Running action
-        runner.run(action, By.id("PersonsContainer"));
+        runner.run(action, By.id("personsContainer"));
     }
 
     // Initializes driver settings
