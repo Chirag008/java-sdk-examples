@@ -1,7 +1,6 @@
 package io.testproject.examples.sdk.java;
 
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.ios.IOSElement;
 import io.testproject.java.annotations.ActionAnnotation;
 import io.testproject.java.annotations.TestParameterAnnotation;
 import io.testproject.java.enums.ExecutionResultType;
@@ -44,7 +43,7 @@ public class FullNameBuilderElementAction extends ElementAction {
         AndroidElement element = this.getElement(AndroidElement.class);
 
         // Make sure that we are on the right page
-        if (!element.getAttribute("name").equals("personsContainer")) {
+        if (!element.getAttribute("resourceId").contains("personsContainer")) {
             this.setMessage("Provided element is not a persons container");
             return ExecutionResultType.Failed;
         }
@@ -57,7 +56,7 @@ public class FullNameBuilderElementAction extends ElementAction {
         String expectedFullName = firstName + " " + lastName;
 
         // Find Full Name element
-        IOSElement fullName = (IOSElement) element.findElement(By.id("fullName"));
+        AndroidElement fullName = (AndroidElement) element.findElement(By.id("fullName"));
 
         // Verify that Full Name equals a concatenation of First and Last
         String fullNameText = fullName.getText();
