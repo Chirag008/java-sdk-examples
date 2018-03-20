@@ -24,5 +24,4 @@ dependencies {
 task('run', dependsOn: 'classes', type: JavaExec) {
     main = 'io.testproject.examples.sdk.java.FullNameBuilderTestRunner'
     classpath = sourceSets.main.runtimeClasspath
-    jvmArgs = ['-Dtp.config.url.local=https://local.dev.tpagent.io:8443','-Dtp.config.sdk.ssl.debug=true']
 }
