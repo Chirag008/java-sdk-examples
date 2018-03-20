@@ -1,7 +1,7 @@
 package io.testproject.examples.sdk.java;
 
-import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.testproject.java.classes.DriverSettings;
 import io.testproject.java.classes.MobileDriverSettings;
 import io.testproject.java.enums.DriverType;
@@ -20,7 +20,7 @@ public class FullNameBuilderAddonRunner {
                      new TestProjectRunner(devToken, driverSettings, true)) {
             // Using the *getAgent* method provided by TestProjectRunner
             // gives access to the relevant driver in order to perform a "stage preparation" sequence before running the action.
-            IOSDriver<IOSElement> driver = runner.getAgent().getIOSDriver(IOSElement.class);
+            AndroidDriver<AndroidElement> driver = runner.getAgent().getAndroidDriver(AndroidElement.class);
 
             // Make sure we start from pristine state
             driver.resetApp();
