@@ -1,0 +1,5 @@
+rootProject.name = 'GoogleTranslateTestRunner'
+
+include ":GoogleTranslateTest"
+project(":GoogleTranslateTest").projectDir = file("../GoogleTranslateTest")
+
